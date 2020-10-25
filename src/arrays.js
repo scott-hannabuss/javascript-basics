@@ -1,62 +1,96 @@
-const getNthElement = (index, array) => {
-  // your code here
-};
+let getNthElement = (index, array) => {
+  while (index >= array.length) {
+    index = (index - array.length)
+  }
+  let answer = array[index];
+  return answer;
+}
 
 const arrayToCSVString = array => {
-  // your code here
+  let answer = array.join();
+  return answer;
 };
 
 const csvStringToArray = string => {
-  // your code here
+  let answer = string.split(',')
+  return answer;
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element)
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  let array3 = array.map(x => x);
+  array3.push(element);
+  return array3;
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  array = array.splice(index, 1);
+  return array;
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  array1 = numbers.map(String);
+  return array1;
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  toUpper = function (x) {
+    return x.toUpperCase();
+  }
+  strings = strings.map(toUpper);
+  return strings;
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  array1 = strings.join();
+
+  function reverseString(input) {
+    var output = "";
+    for (var i = input.length - 1; i >= 0; i--) {
+      output += input[i];
+    }
+    return output;
+  }
+
+  array2 = reverseString(array1);
+
+  array3 = array2.split(',');
+
+  array4 = array3.reverse();
+
+  return array4;
 };
 
-const onlyEven = numbers => {
-  // your code here
+const onlyEven = (numbers) => {
+  return numbers.filter(x => x % 2 === 0);
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  let array2 = array.filter((x, indexvalue) => indexvalue !== index);
+  return array2;
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
-};
+  array2 = (strings.filter(str => /^[aeiou]/i.test(str)));
+  return array2;
+}
 
 const removeSpaces = string => {
-  // your code here
+  string2 = string.replace(/\s+/g, '');
+  return string2;
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  let count = numbers.reduce((a, b) => a + b);
+  return count;
 };
 
 const sortByLastLetter = strings => {
-  // your code here
-};
+  return strings.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
+}
 
 module.exports = {
   getNthElement,
